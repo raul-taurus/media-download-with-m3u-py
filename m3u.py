@@ -12,14 +12,16 @@ def main(url, target):
     conn = http.client.HTTPSConnection(u.hostname, u.port)
 
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36",
-        "Origin": f"{u.scheme}://{u.netloc}",
-        "Accept": "*/*",
-        "Sec-Fetch-Site": "same-site",
-        "Sec-Fetch-Mode": "cors",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Accept-Language": "en-US,en;q=0.9",
-        "Referer": "https://www.mgtv.com/b/331851/6758406.html",
+        'accept': '*/*',
+        'accept-encoding': 'gzip, deflate, br',
+        'accept-language': 'en-US,en;q=0.9',
+        'sec-ch-ua': '" Not A;Brand";v="99", "Chromium";v="96", "Google Chrome";v="96"',
+        'sec-ch-ua-mobile': '?0',
+        'sec-ch-ua-platform': '"Linux"',
+        'sec-fetch-dest': 'empty',
+        'sec-fetch-mode': 'cors',
+        'sec-fetch-site': 'same-site',
+        'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36',
     }
 
     last_slash = u.path.rfind("/")
@@ -55,8 +57,8 @@ def main(url, target):
     media.close()
 
 
-# url = ""  # sys.argv[1]
-url = "https://pcvideoyf.titan.mgtv.com/c1/2019/10/26_0/A9795EC523BA6999B5680812B2E5C429_20191026_1_1_2183_mp4/1FE031A66882208FBC73F8B714667DA7.m3u8?arange=0&pm=ZC2maRW070sIpefR~JJbaBqf0I9FtvEZaIzMNxp7zAs9vsmNKX5o4VTW6fDerdYJewAR7C1ZDuw4MV7gm9VPeZwE401cUgZxMtrONHSfBnpb5cCNOB4ApRcr1EdNKnB6ggQ66zm9YYv037qxEHQzjPmjKE5cFBKksrv_Z9SuTFSRl_SCV4NEpUMNvrbWpIwClRDV4f3TUXHlaFl4nyqdzNkqHyVlthrtP7BPN8Yv3IzKq7JDLsqCxYYfwov7gODwMQJv8KGBWK6TcM7gayhekgbiVYiVeOsCCbq_dE_X3EVi4vcN_7Q~abj_ooPjHBLXiBmvvqtsvBlPPP1FJ6eBDCzZbidyyx5jrz5yY8ueKruTo_wzhDYJzFNvrS0y8gpEM1rQ6sqoMaXIDAVtLN8Fm62G8Gqjh0iERp3fDUaTflpUlFO2NwKxRbXfD9hig77uQ7F08Tr0lv7QBC7DNrRe9jEPrc4FC1X8MbKoKDD~QFHsjE0Q&mr=DLGUg62uW3KOb24kr0ejg~i8NxhE8PojJ0zCl3CKfSeAy0o_WeSCXQ16FUUNSz~1p7XrcWViE0y8xuPzXpktSMKvZOvRkZifBKfG02~63afdOErZ&vcdn=0&scid=25022&_t=1576773815878"
+url = sys.argv[1]
+# url = "https://pcvideoyf.titan.mgtv.com/c1/2019/10/26_0/A9795EC523BA6999B5680812B2E5C429_20191026_1_1_2183_mp4/1FE031A66882208FBC73F8B714667DA7.m3u8?arange=0&pm=ZC2maRW070sIpefR~JJbaBqf0I9FtvEZaIzMNxp7zAs9vsmNKX5o4VTW6fDerdYJewAR7C1ZDuw4MV7gm9VPeZwE401cUgZxMtrONHSfBnpb5cCNOB4ApRcr1EdNKnB6ggQ66zm9YYv037qxEHQzjPmjKE5cFBKksrv_Z9SuTFSRl_SCV4NEpUMNvrbWpIwClRDV4f3TUXHlaFl4nyqdzNkqHyVlthrtP7BPN8Yv3IzKq7JDLsqCxYYfwov7gODwMQJv8KGBWK6TcM7gayhekgbiVYiVeOsCCbq_dE_X3EVi4vcN_7Q~abj_ooPjHBLXiBmvvqtsvBlPPP1FJ6eBDCzZbidyyx5jrz5yY8ueKruTo_wzhDYJzFNvrS0y8gpEM1rQ6sqoMaXIDAVtLN8Fm62G8Gqjh0iERp3fDUaTflpUlFO2NwKxRbXfD9hig77uQ7F08Tr0lv7QBC7DNrRe9jEPrc4FC1X8MbKoKDD~QFHsjE0Q&mr=DLGUg62uW3KOb24kr0ejg~i8NxhE8PojJ0zCl3CKfSeAy0o_WeSCXQ16FUUNSz~1p7XrcWViE0y8xuPzXpktSMKvZOvRkZifBKfG02~63afdOErZ&vcdn=0&scid=25022&_t=1576773815878"
 
 temp_output = "media.mp4"
 final_output = "final-media.mp4"
